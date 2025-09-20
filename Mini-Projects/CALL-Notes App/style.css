@@ -1,0 +1,322 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins';
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f3f3f3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* ------------------- MAIN APP LAYOUT ------------------- */
+.app-container {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    position: relative;
+}
+
+/* Side Buttons */
+.side-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.side-buttons button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background: #fff;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Color Dots */
+.colors {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.color-dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.black {
+    background: #000;
+}
+
+.purple {
+    background: #9c6ade;
+}
+
+.orange {
+    background: #f6933c;
+}
+
+.teal {
+    background: #26c6da;
+}
+
+/* ------------------- CARD -------------------
+.card {
+    width: 300px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease;
+} */
+
+/* ------------------- CARD STACK ------------------- */
+.card-stack {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    /* enough to hold overlapping cards */
+    perspective: 1000px;
+}
+
+.card {
+    width: 100%;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+/* layering effect */
+.card:nth-child(1) {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+    z-index: 3;
+}
+
+.card:nth-child(2) {
+    transform: translateY(20px) scale(0.98);
+    opacity: 0.9;
+    z-index: 2;
+}
+
+.card:nth-child(3) {
+    transform: translateY(40px) scale(0.96);
+    opacity: 0.8;
+    z-index: 1;
+}
+
+.card:nth-child(n+4) {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.profile img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.info {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #555;
+}
+
+.info+.info {
+    margin-top: 8px;
+}
+
+.actions {
+    margin-top: 18px;
+    display: flex;
+    gap: 10px;
+}
+
+.actions button {
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.call-btn {
+    background: #000;
+    color: #fff;
+}
+
+.msg-btn {
+    background: #eaeaea;
+    color: #333;
+}
+
+/* ------------------- FORM (MODAL STYLE) ------------------- */
+.form-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    display: none;
+    /* hidden by default */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.form-container {
+    background: #fff;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    width: 400px;
+}
+
+.form-container h2 {
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.form-group input[type="text"] {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    font-size: 14px;
+    outline: none;
+    transition: border 0.3s;
+}
+
+.form-group input[type="text"]:focus {
+    border-color: #000;
+}
+
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.category {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border: 2px solid #ddd;
+    border-radius: 20px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.category input {
+    accent-color: inherit;
+    cursor: pointer;
+}
+
+.emergency {
+    border-color: #e53935;
+    color: #e53935;
+}
+
+.important {
+    border-color: #f6a623;
+    color: #f6a623;
+}
+
+.urgent {
+    border-color: #6a1b9a;
+    color: #6a1b9a;
+}
+
+.norush {
+    border-color: #757575;
+    color: #757575;
+}
+
+.form-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.btn {
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    font-size: 15px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.create-btn {
+    background: #000;
+    color: #fff;
+}
+
+.close-btn {
+    background: #e53935;
+    color: #fff;
+}
+
+/* Labels = UPPERCASE */
+.info span:first-child {
+    text-transform: uppercase;
+    font-weight: 600;
+    /* optional bold */
+}
+
+/* Values = Capitalize */
+.info span:last-child {
+    text-transform: capitalize !important;
+}

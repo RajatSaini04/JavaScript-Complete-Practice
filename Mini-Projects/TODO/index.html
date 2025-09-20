@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notes App UI</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f3f3f3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .app-container {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    /* Side Buttons */
+    .side-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .side-buttons button {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: none;
+      background: #fff;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+      font-size: 18px;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Color Dots */
+    .colors {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .color-dot {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .black { background: #000; }
+    .purple { background: #9c6ade; }
+    .orange { background: #f6933c; }
+    .teal { background: #26c6da; }
+
+    /* Card */
+    .card {
+      width: 300px;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      padding: 20px;
+      position: relative;
+      transition: transform 0.3s ease;
+    }
+
+    /* Profile Section */
+    .profile {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .profile img {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .profile h3 {
+      margin: 0;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    /* Info Rows */
+    .info {
+      margin-top: 15px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .info + .info {
+      margin-top: 8px;
+    }
+
+    /* Action Buttons */
+    .actions {
+      margin-top: 18px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .actions button {
+      padding: 8px 16px;
+      border-radius: 20px;
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .call-btn {
+      background: #000;
+      color: #fff;
+    }
+
+    .msg-btn {
+      background: #eaeaea;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    
+    <!-- Side Buttons -->
+    <div class="side-buttons">
+      <button>+</button>
+      <button>↑</button>
+      <button>↓</button>
+    </div>
+
+    <!-- Card -->
+    <div class="card">
+      <div class="profile">
+        <img src="https://via.placeholder.com/45" alt="profile">
+        <h3>Fatima Uma</h3>
+      </div>
+
+      <div class="info">
+        <span>Home town</span>
+        <span>Singapore</span>
+      </div>
+      <div class="info">
+        <span>Bookings</span>
+        <span>3 times</span>
+      </div>
+
+      <div class="actions">
+        <button class="call-btn">📞 Call</button>
+        <button class="msg-btn">Message</button>
+      </div>
+    </div>
+
+    <!-- Color Options -->
+    <div class="colors">
+      <div class="color-dot black"></div>
+      <div class="color-dot purple"></div>
+      <div class="color-dot orange"></div>
+      <div class="color-dot teal"></div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
