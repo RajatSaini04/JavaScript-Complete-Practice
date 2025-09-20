@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js EVENTS</title>
+</head>
+
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    body {
+        position: relative;
+        overflow-x: hidden;
+        height: auto;
+        margin-bottom: 100px;
+    }
+
+    p {
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    #fileinp {
+        display: none;
+    }
+
+    #btn {
+        padding: 12px 22px;
+        background-color: red;
+        color: white;
+        border-radius: 10px;
+        width: 200px;
+        cursor: pointer;
+    }
+
+    .card {
+        padding: 20px;
+        display: inline-block;
+        border: 2px solid black;
+        margin-top: 20px;
+        width: 200px;
+    }
+
+    .profile {
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        /* background-color: aqua; */
+        margin-bottom: 10px;
+        overflow: hidden;
+    }
+
+    .profile img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+
+    }
+
+
+
+    #mousemove {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background: rgb(238,174,202);
+    background: -moz-radial-gradient(circle, rgba(42, 179, 216, 0.8) 0%, rgba(42, 179, 216, 0.2) 100%);
+    box-shadow: 0px 0px 20px rgba(42, 179, 216, 1);
+    background: radial-gradient(circle, rgba(42, 179, 216, 0.8) 0%, rgba(42, 179, 216, 0.2) 100%);
+    /* background-repeat: no-repeat;
+    background-position: center; */
+    position: absolute;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s;
+}
+/* gpt se kiya css ye wala */
+/* @keyframes pulse {
+    0%, 100% {
+        box-shadow: 
+            0 0 20px rgba(222, 138, 171, 0.8),
+            0 0 40px rgba(82, 163, 255, 0.6),
+            0 0 60px rgba(82, 163, 255, 0.5);
+    }
+    50% {
+        box-shadow: 
+            0 0 30px rgba(222, 138, 171, 1),
+            0 0 60px rgba(82, 163, 255, 0.9),
+            0 0 80px rgba(82, 163, 255, 0.7);
+    }
+}
+
+#mousemove {
+    animation: pulse 3s infinite ease-in-out;
+} */
+
+/* gpt se kiya css ye wala */
+
+
+
+
+    /* .mousebox{
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+    } */
+</style>
+
+<body>
+
+    <div>
+        <h2> task 1</h2>
+        <p><b>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet, velit.
+            </b></p>
+    </div>
+        <br><br>
+    <br>
+    <h2>task 2</h2>
+    <input type="text">
+    <br><br>
+    <br>
+    <h2 id="device">taks 3</h2>
+    <select name="phone-select">
+        <option selected disabled> Choose Device</option>
+        <option value="Samsung">Samsung</option>
+        <option value="Apple ">apple iphone</option>
+        <option value="oppp">oppo</option>
+        <option value="Mi">xiomi</option>
+    </select>
+    <br><br>
+    <br>
+    <h2 class="task4"> Task 4 - keydown here: </h2>
+
+    <h2>Task 5</h2>
+    <div id="">
+        <input type="file" id="fileinp">
+        <div id="btn">
+            Upload file
+        </div>
+    </div>
+    <br>
+    <br>
+    <h2> Task 6 - submit btn</h2>
+    <div class="task6">
+        <form action="">
+            <input class="form-input" type="text" placeholder="profile pic">
+            <input class="form-input" type="text" placeholder="name">
+            <input class="form-input" type="text" placeholder="info">
+            <input type="submit" value="Submit">
+        </form>
+        <!-- Js ye niche wala html banaya -->
+        <!-- <div class="card">
+            <div class="profile">
+                <img src="https://images.unsplash.com/photo-1442328166075-47fe7153c128?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="" srcset="">
+            </div>
+            <h3>Rajat</h3>
+            <p> Lorem ipsum dolor sit amet.
+            </p>
+        </div> -->
+    </div>
+
+    <br>
+    <br>
+    <h2>task6 - mouseMove </h2>
+    <div class="mousebox">
+        <div id="mousemove"></div>
+    </div>
+    <br>
+
+    <h2>task 7</h2>
+    <div class="outer" style="background-color: red; width: 200px; height: 200px; justify-content: center; display: flex; align-items: center;">
+        <div class="inner" style="background-color: yellow; width: 100px; height: 100px;"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

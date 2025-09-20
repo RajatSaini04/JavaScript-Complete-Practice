@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Progress Bar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+
+            height: 100vh;
+            background: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .progress-container {
+            width: 400px;
+            height: 30px;
+            background: #ddd;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 0%; /* JS se update karna */
+            background: linear-gradient(90deg, #4caf50, #2e7d32);
+            /* transition: width 0.3s ease; */
+        }
+
+        .progress-text {
+            margin-top: 10px;
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .wrapper {
+            width: 500px;
+            height: 300px;
+            background: black;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="progress-container">
+            <div class="progress-bar" id="progress"></div>
+        </div>
+        <div class="progress-text" id="progress-text">0% Downloaded</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
