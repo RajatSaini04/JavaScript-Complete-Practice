@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DiscoBox</title>
+</head>
+<style>
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .box {
+        height: 100px;
+        width: 100px;
+        border: 2px solid black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+    }
+</style>
+
+<body>
+
+    <div class="container">
+        <div class="box">Box </div>
+        <div class="box">Box </div>
+        <div class="box">Box </div>
+        <div class="box">Box </div>
+        <div class="box">Box </div>
+    </div>
+</body>
+
+
+<!-- <script src="discoscript.js"></script> -->
+
+<script>
+    let boxes = document.querySelector(".container").children
+
+    function getRandomColor() {
+        let val1 = Math.ceil(0 + Math.random() * 255)
+        let val2 = Math.ceil(0 + Math.random() * 255)
+        let val3 = Math.ceil(0 + Math.random() * 255)
+        return `rgb(${val1}, ${val2}, ${val3})`
+    }
+    Array.from(boxes).forEach(e => {
+        e.style.backgroundColor = getRandomColor()
+        e.style.color = getRandomColor()
+    })
+</script>
+<!-- <script src="discoscript1.js"></script> -->
+
+</html>
+
+`<div class="card">
+    <div class="img">
+        <img src="${thumbnail}"
+            alt="">
+    </div>
+    <div class="text">
+        <h2>${title}</h2>
+        <h3> ${cname} . ${viewscounter} views . ${monthsold} months ago</h3>
+    </div>
+</div>`
+
+
+
+
+
+
+<div class="card">
+    <div class="img">
+        <img src="https://i.ytimg.com/vi/gRLdHSabW3o/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLB21Dwm3c7yoXYuR2rb5vPT7YxK1A"
+            alt="">
+    </div>
+    <div class="text">
+        <h2>hi</h2>
+        <h3>Cwh . 555k views . 1months old</h3>
+    </div>
+</div>
