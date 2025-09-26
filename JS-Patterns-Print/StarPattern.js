@@ -162,14 +162,13 @@ star6()
 //    *****   
 //   *******  
 //  ********* 
-// ***********
 console.log('star 7');
 function star7() {
     for (let i = 1; i <= n; i++) {
         let row = ""; // build one row
         // left spaces
         for (let j = 1; j < n + 1 - i; j++) {
-            row += j;        //spaces print
+            row += ' ';        //spaces print, use j for debugging
         } // same for right spaces but not needed
 
         for (let j = 1; j <= 2 * i - 1; j++) {
@@ -194,7 +193,7 @@ function star8() {
         let row = ""; // build one row
         // left spaces
         for (let j = 1; j < i; j++) {
-            row += j;        //spaces print
+            row += ' ';        //spaces print , use j for debugging
         } // same for right spaces but not needed
 
         for (let j = 1; j <= 2 * (n - i) + 1; j++) {
@@ -205,17 +204,77 @@ function star8() {
 }
 star8();
 
-// console.log('');
-// console.log('star ');
-function star9() { }
+console.log('');
+console.log('star 9');
+function star9() {
+
+    // Combination of 7 and 8
+    star7()
+    star8()
+
+}
 star9();
-// console.log('');
-// console.log('star ');
-function star10() { }
+
+// Start 10
+//  *
+//  **
+//  *** 
+//  ****
+//  *****
+//  ******  
+//  *****
+//  ****
+//  ***    
+//  **
+//  *
+console.log('');
+console.log('star 10 ');
+function star10() {
+    for (let i = 1; i <= 2 * n - 1; i++) { //9 rows
+
+        let row = ""
+        let stars = i
+        if (i > n) {        // i > 5 i.e. 6 > 5 = True
+            stars = 2 * n - i
+        }
+        // using ternary operator for above code
+        // let stars = (i > n) ? 2 * n - i : i;
+
+        for (let j = 1; j <= stars; j++) {
+            row += "*"
+        }
+        console.log(row);
+
+    }
+}
 star10();
-// console.log('');
-// console.log('star ');
-function star11() { }
+
+
+// star 11
+// 1
+// 01
+// 101
+// 0101
+// 10101
+// 010101
+console.log('');
+console.log('star 11');
+function star11() {
+    let start = 1
+    for (let i = 1; i <= n; i++) {
+        let row = "";
+
+        start = (i % 2 == 0) ? 0 : 1;
+
+        for (let j = 1; j <= i; j++) {
+            row += start
+            start = 1 - start
+        }
+
+        console.log(row);
+    }
+
+}
 star11();
 // console.log('');
 // console.log('star ');
