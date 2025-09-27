@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Builder</title>
+</head>
+<style>
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 1280px;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+
+    .card {
+        display: flex;
+        width: 60%;
+        border-radius: 6px;
+        border: 1px solid black;
+        align-items: center;
+
+
+    }
+
+    .text {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .text>* {
+        margin: 10px;
+    }
+
+    .img {
+        position: relative;
+    }
+
+    .capsule {
+
+        position: absolute;
+        bottom: 4px;
+        z-index: 10;
+        right: 5px;
+        background-color: rgba(0, 0, 0, 0.463);
+        color: white;
+        opacity: .9;
+        padding: 2px;
+    }
+</style>
+
+<body>
+
+    <div class="container">
+
+        <div class="card">
+            <div class="img">
+
+                <img src="https://i.ytimg.com/vi/gRLdHSabW3o/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLB21Dwm3c7yoXYuR2rb5vPT7YxK1A"
+                    alt="">
+                <div class="capsule">26:55</div>
+            </div>
+            <div class="text">
+                <h2>hi</h2>
+
+                <h3>Cwh . 555k views . 1months old</h3>
+
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        let container = document.getElementsByClassName("container")
+        
+        function createCard(title, cname, views, monthsold, duration, thumbnail) {
+            
+            
+                    let viewscounter
+                    if (views < 1000) {
+                        viewscounter = views 
+                    }
+                    else if (views > 1000000) {
+                        viewscounter = views / 1000000 + 'M'
+                    }
+            
+                    else {
+                        viewscounter = views / 1000 + 'K'
+                    }
+
+
+
+            let html = `<div class="card">
+            <div class="img">
+                <img src="${thumbnail}"
+                    alt="">
+                 <div class="capsule">${duration}</div>
+
+            </div>
+            <div class="text">
+                <h2>${title}</h2>
+                <h3> ${cname} . ${viewscounter} views . ${monthsold} months ago</h3>
+            </div>
+        </div>`
+        
+
+        document.querySelector(".container").innerHTML =  document.querySelector(".container").innerHTML + html
+        }
+
+        createCard("Introduction to Backend | Sigma Web Dev video #2", "CodeWithHarry",
+            560000, 7, "31:22", "https://i.ytimg.com/vi/gRLdHSabW3o/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLB21Dwm3c7yoXYuR2rb5vPT7YxK1A")
+    </script>
+</body>
+
+</html>
