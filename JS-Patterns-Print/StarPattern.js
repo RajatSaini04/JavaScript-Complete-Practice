@@ -276,6 +276,82 @@ function star11() {
 
 }
 star11();
+
+function pattern12(N) {
+    // initial number of spaces in row 1
+    let spaces = 2 * (N - 1);
+
+    // Outer loop for rows
+    for (let i = 1; i <= N; i++) {
+        let row = "";
+
+        // print ascending numbers 1..i
+        for (let j = 1; j <= i; j++) {
+            row += j;
+        }
+
+        // print spaces
+        for (let j = 1; j <= spaces; j++) {
+            row += " ";
+        }
+
+        // print descending numbers i..1
+        for (let j = i; j >= 1; j--) {
+            row += j;
+        }
+
+        console.log(row);
+
+        // reduce spaces by 2 for next row
+        spaces -= 2;
+    }
+}
+
+// Run for N = 5
+pattern12(5);
+
+
+function pattern13(N) {
+    let num = 1; // starting number
+
+    // Outer loop for rows
+    for (let i = 1; i <= N; i++) {
+        let row = "";
+
+        // Inner loop to print i numbers
+        for (let j = 1; j <= i; j++) {
+            row += num + " ";
+            num++;
+        }
+
+        console.log(row.trim()); // print row and trim trailing space
+    }
+}
+
+// Run for N = 5
+pattern13(5);
+
+
+
+
+function pattern14(N) {
+    // Outer loop for rows
+    for (let i = 0; i < N; i++) {
+        let row = "";
+
+        // Inner loop to print letters from 'A' to 'A' + i
+        for (let j = 0; j <= i; j++) {
+            // String.fromCharCode converts ASCII code to character
+            row += String.fromCharCode(65 + j) + " "; // 65 is ASCII of 'A'
+        }
+
+        console.log(row.trim()); // print row
+    }
+}
+
+// Run for N = 5
+pattern14(5);
+
 // console.log('');
 // console.log('star ');
 function star12() { }
