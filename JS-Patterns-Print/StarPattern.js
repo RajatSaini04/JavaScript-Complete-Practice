@@ -370,25 +370,69 @@ function pattern15(N) {
 // Run for N = 5
 pattern15(5);
 
-class Main {
-  static pattern16(N) {
-    // Outer loop for the number of rows
-    for (let i = 0; i < N; i++) {
-      let row = "";
-      
-      // Inner loop: print same character (A+i) (i+1) times
-      for (let j = 0; j <= i; j++) {
-        row += String.fromCharCode(65 + i) + " ";
-      }
-      
-      console.log(row);
+// pattern16
+// A
+// B B
+// C C C
+// D D D D
+// E E E E E
+
+console.log('');
+console.log('pattern16');
+
+function pattern16() {
+    for (let i = 0; i < n; i++) {
+        let row = "";
+
+        for (let j = 0; j <= i; j++) {
+            row += String.fromCharCode(65 + i) + " ";
+        }
+
+        console.log(row);
     }
-  }
 }
 
-// Example usage
-let N = 5;
-Main.pattern16(N);
+pattern16();
+
+// pattern17
+//     A    
+//    ABA   
+//   ABCBA  
+//  ABCDCBA 
+// ABCDEDCBA
+
+console.log('');
+console.log('pattern17');
+
+function pattern17() {
+    for (let i = 0; i < n; i++) {
+        let row = "";
+
+        // spaces before characters
+        for (let j = 0; j < n - i - 1; j++) {
+            row += " ";
+        }
+
+        // characters (increasing then decreasing)
+        let ch = 'A'.charCodeAt(0);  // ASCII for 'A'
+        let breakpoint = Math.floor((2 * i + 1) / 2);
+
+        for (let j = 1; j <= 2 * i + 1; j++) {
+            row += String.fromCharCode(ch);
+            if (j <= breakpoint) ch++;
+            else ch--;
+        }
+
+        // spaces after characters (optional, not needed for console)
+        for (let j = 0; j < n - i - 1; j++) {
+            row += " ";
+        }
+
+        console.log(row);
+    }
+}
+
+pattern17();
 
 // console.log('');
 // console.log('star ');
