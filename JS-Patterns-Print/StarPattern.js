@@ -352,6 +352,44 @@ function pattern14(N) {
 // Run for N = 5
 pattern14(5);
 
+
+function pattern15(N) {
+    // Outer loop for rows
+    for (let i = 0; i < N; i++) {
+        let row = "";
+
+        // Inner loop: print A to A + (N - i - 1)
+        for (let j = 0; j <= N - i - 1; j++) {
+            row += String.fromCharCode(65 + j) + " "; // 65 = 'A'
+        }
+
+        console.log(row.trim()); // print row
+    }
+}
+
+// Run for N = 5
+pattern15(5);
+
+class Main {
+  static pattern16(N) {
+    // Outer loop for the number of rows
+    for (let i = 0; i < N; i++) {
+      let row = "";
+      
+      // Inner loop: print same character (A+i) (i+1) times
+      for (let j = 0; j <= i; j++) {
+        row += String.fromCharCode(65 + i) + " ";
+      }
+      
+      console.log(row);
+    }
+  }
+}
+
+// Example usage
+let N = 5;
+Main.pattern16(N);
+
 // console.log('');
 // console.log('star ');
 function star12() { }
