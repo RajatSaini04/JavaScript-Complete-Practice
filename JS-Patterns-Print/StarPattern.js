@@ -277,98 +277,98 @@ function star11() {
 }
 star11();
 
-function pattern12(N) {
-    // initial number of spaces in row 1
-    let spaces = 2 * (N - 1);
-
-    // Outer loop for rows
-    for (let i = 1; i <= N; i++) {
-        let row = "";
-
-        // print ascending numbers 1..i
+// Star 12
+// 1      1
+// 12    21
+// 123  321
+// 12344321
+console.log('');
+console.log('star 12');
+function star12() {
+    let spaces = 2 * (n - 1)
+    for (let i = 1; i <= n; i++) { //1..5
+        let row = ""
+        // left
         for (let j = 1; j <= i; j++) {
-            row += j;
+            row += j
         }
-
-        // print spaces
+        // spaces
         for (let j = 1; j <= spaces; j++) {
-            row += " ";
+            row += ' '
         }
-
-        // print descending numbers i..1
+        // right
         for (let j = i; j >= 1; j--) {
-            row += j;
+            row += j
         }
+        console.log(row);
+        spaces -= 2;
 
+    }
+}
+star12();
+
+// Star 13
+// 1
+// 2 3
+// 4 5 6
+// 7 8 9 10
+// 11 12 13 14 15
+
+console.log('');
+console.log('star 13');
+function star13() {
+    let sum = 1
+    for (let i = 1; i <= n; i++) { //1..5
+        let row = ""
+        for (let j = 1; j <= i; j++) {
+            row += sum + ' '
+            sum += 1
+        }
         console.log(row);
 
-        // reduce spaces by 2 for next row
-        spaces -= 2;
     }
 }
+star13();
 
-// Run for N = 5
-pattern12(5);
+// Star 14
+// A
+// A B
+// A B C
+// A B C D
+// A B C D E
 
-
-function pattern13(N) {
-    let num = 1; // starting number
-
-    // Outer loop for rows
-    for (let i = 1; i <= N; i++) {
-        let row = "";
-
-        // Inner loop to print i numbers
-        for (let j = 1; j <= i; j++) {
-            row += num + " ";
-            num++;
+console.log('');
+console.log('star 14');
+function star14() {
+    for (let i = 0; i <= n; i++) { //1..5
+        let row = ""
+        for (let j = 0; j < i; j++) { // 1..5
+            row += String.fromCharCode(65 + j) + ' '
         }
-
-        console.log(row.trim()); // print row and trim trailing space
+        console.log(row);
     }
 }
+star14();
 
-// Run for N = 5
-pattern13(5);
+// Star 15
+// A B C D E
+// A B C D
+// A B C
+// A B
+// A
 
-
-
-
-function pattern14(N) {
-    // Outer loop for rows
-    for (let i = 0; i < N; i++) {
-        let row = "";
-
-        // Inner loop to print letters from 'A' to 'A' + i
-        for (let j = 0; j <= i; j++) {
-            // String.fromCharCode converts ASCII code to character
-            row += String.fromCharCode(65 + j) + " "; // 65 is ASCII of 'A'
+console.log('');
+console.log('star 15');
+function star15() {
+    for (let i = 0; i <= n; i++) { //1..5
+        let row = ""
+        for (let j = 0; j < n - i; j++) { // 5..1
+            row += String.fromCharCode(65 + j) + ' '
         }
-
-        console.log(row.trim()); // print row
+        console.log(row);
     }
 }
-
-// Run for N = 5
-pattern14(5);
-
-
-function pattern15(N) {
-    // Outer loop for rows
-    for (let i = 0; i < N; i++) {
-        let row = "";
-
-        // Inner loop: print A to A + (N - i - 1)
-        for (let j = 0; j <= N - i - 1; j++) {
-            row += String.fromCharCode(65 + j) + " "; // 65 = 'A'
-        }
-
-        console.log(row.trim()); // print row
-    }
-}
-
-// Run for N = 5
-pattern15(5);
+star15();
 
 // pattern16
 // A
@@ -378,13 +378,15 @@ pattern15(5);
 // E E E E E
 
 console.log('');
-console.log('pattern16');
+console.log('star 16');
 
-function pattern16() {
+function star16() {
     for (let i = 0; i < n; i++) {
         let row = "";
 
         for (let j = 0; j <= i; j++) {
+            // i=1, j=1times 65+1 , A
+            // i=2, j=2times 65+2, BB
             row += String.fromCharCode(65 + i) + " ";
         }
 
@@ -392,9 +394,9 @@ function pattern16() {
     }
 }
 
-pattern16();
+star16();
 
-// pattern17
+// star17
 //     A    
 //    ABA   
 //   ABCBA  
@@ -402,9 +404,9 @@ pattern16();
 // ABCDEDCBA
 
 console.log('');
-console.log('pattern17');
+console.log('star 17');
 
-function pattern17() {
+function star17() {
     for (let i = 0; i < n; i++) {
         let row = "";
 
@@ -412,70 +414,57 @@ function pattern17() {
         for (let j = 0; j < n - i - 1; j++) {
             row += " ";
         }
+        // char print
+        let char = 'A'.charCodeAt(0)
+        let breakpt = Math.floor((2 * i + 1) / 2)
+        for (let j = 0; j < 2 * i + 1; j++) {
+            row += String.fromCharCode(char)
 
-        // characters (increasing then decreasing)
-        let ch = 'A'.charCodeAt(0);  // ASCII for 'A'
-        let breakpoint = Math.floor((2 * i + 1) / 2);
-
-        for (let j = 1; j <= 2 * i + 1; j++) {
-            row += String.fromCharCode(ch);
-            if (j <= breakpoint) ch++;
-            else ch--;
-        }
-
-        // spaces after characters (optional, not needed for console)
-        for (let j = 0; j < n - i - 1; j++) {
-            row += " ";
+            if (j < breakpt) char++
+            else char--
         }
 
         console.log(row);
     }
 }
 
-pattern17();
-
-// console.log('');
-// console.log('star ');
-function star12() { }
-star12();
-// console.log('');
-// console.log('star ');
-function star13() { }
-star13();
-// console.log('');
-// console.log('star ');
-function star14() { }
-star14();
-// console.log('');
-// console.log('star ');
-function star15() { }
-star15();
-// console.log('');
-// console.log('star ');
-function star16() { }
-star16();
-// console.log('');
-// console.log('star ');
-function star17() { }
 star17();
-// console.log('');
-// console.log('star ');
-function star18() { }
+
+// Star 18
+// 
+// E 
+// D E 
+// C D E 
+// B C D E 
+// A B C D E 
+console.log('');
+console.log('star 18');
+function star18() {
+
+    for (let i = 0; i < n; i++) { // 0..4
+        let row = ""
+        let char = 'A'.charCodeAt(0) + (n - i - 1) //65 + num = 69 start
+        for (let j = 0; j <= i; j++) { // 1..5
+            row += String.fromCharCode(char + j) + " " // 
+        }
+        console.log(row);
+    }
+}
 star18();
-// console.log('');
-// console.log('star ');
-function star19() { }
-star19();
-// console.log('');
-// console.log('star ');
-function star20() { }
-star20();
-// console.log('');
-// console.log('star ');
-function star21() { }
-star21();
-// console.log('');
-// console.log('star ');
-function star22() { }
-star22();
+// // console.log('');
+// // console.log('star ');
+// function star19() { }
+// star19();
+// // console.log('');
+// // console.log('star ');
+// function star20() { }
+// star20();
+// // console.log('');
+// // console.log('star ');
+// function star21() { }
+// star21();
+// // console.log('');
+// // console.log('star ');
+// function star22() { }
+// star22();
 
