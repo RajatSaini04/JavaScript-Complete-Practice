@@ -451,6 +451,62 @@ function star18() {
     }
 }
 star18();
+
+
+// Star 19
+// **********
+// ****  ****
+// ***    ***
+// **      **
+// *        *
+// *        *
+// **      **
+// ***    ***
+// ****  ****
+// **********
+
+console.log('');
+console.log('star 19');
+
+function star19() {
+    for (let i = 0; i < n; i++) {
+        let row = "";
+        // left stars
+        for (let j = 1; j <= n - i; j++) {
+            row += "*";
+        }
+        // spaces
+        for (let j = 0; j < i * 2; j++) {
+            row += " ";
+        }
+        // right stars
+        for (let j = 1; j <= n - i; j++) {
+            row += "*";
+        }
+        console.log(row);
+    }
+
+    // lower half
+    for (let i = 0; i < n; i++) {
+        let row = "";
+        // left stars
+        for (let j = 0; j <= i; j++) {
+            row += "*";
+        }
+        // spaces
+        for (let j = 0; j < (n - i - 1) * 2; j++) {
+            row += " ";
+        }
+        // right stars
+        for (let j = 0; j <= i; j++) {
+            row += "*";
+        }
+        console.log(row);
+    }
+}
+
+star19();
+
 // // console.log('');
 // // console.log('star ');
 // function star19() { }
