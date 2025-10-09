@@ -467,57 +467,106 @@ star18();
 
 console.log('');
 console.log('star 19');
-
 function star19() {
-    for (let i = 0; i < n; i++) {
-        let row = "";
-        // left stars
-        for (let j = 1; j <= n - i; j++) {
-            row += "*";
+
+    for (let i = 1; i <= n; i++) {
+        let row = ""
+        // UPPER Symmetry
+
+        // Left 
+        for (let j = 1; j <= n - i + 1; j++) {
+            row += "* "
         }
-        // spaces
-        for (let j = 0; j < i * 2; j++) {
-            row += " ";
+        for (let j = 1; j <= (i - 1) * 2; j++) {
+            row += "  " // use J for debugging
         }
-        // right stars
-        for (let j = 1; j <= n - i; j++) {
-            row += "*";
+        // right 
+        for (let j = 1; j <= n - i + 1; j++) {
+            row += "* "
         }
         console.log(row);
     }
 
-    // lower half
-    for (let i = 0; i < n; i++) {
-        let row = "";
-        // left stars
-        for (let j = 0; j <= i; j++) {
-            row += "*";
+    // LOWER 
+
+    // left
+    for (let i = 1; i <= n; i++) {
+        let row = ""
+        // UPPER Symmetry
+
+        // Left 
+        for (let j = 1; j <= i; j++) {
+            row += "* "
         }
+        for (let j = 1; j <= (n - i) * 2; j++) {
+            row += "  "  // use J for debugging
+        }
+        // right 
+        for (let j = 1; j <= i; j++) {
+            row += "* "
+        }
+        console.log(row);
+    }
+
+}
+star19();
+
+
+console.log('');
+console.log('star 20');
+// *          *
+// **        **
+// ***      ***
+// ****    ****
+// *****  *****
+// ****    ****
+// ***      ***
+// **        **
+// *          * 
+function star20() {
+
+    for (let i = 1; i <= 2 * n - 1; i++) {
+        let row = '';
+
+
+        // let spaces = (n - i) * 2
+        // let stars = i
+        // // UPPER
+        // if (i > n) {
+        //     stars = 2 * n - i
+        // }
+        // if (i > n) {
+        //     spaces = (i - n) * 2
+        // }
+        // let stars = (i>n)? '': ''
+
+        // same as above but this with ternary operator
+        let stars = (i <= n) ? i : 2 * n - i;
+        let spaces = (i <= n) ? (n - i) * 2 : (i - n) * 2;
+        // left
+        for (let j = 1; j <= stars; j++) {
+            row += '* '
+        }
+
         // spaces
-        for (let j = 0; j < (n - i - 1) * 2; j++) {
-            row += " ";
+        for (let j = 1; j <= spaces; j++) {
+            row += j + ' '  // 2 spaces-- use j for debuging
         }
-        // right stars
-        for (let j = 0; j <= i; j++) {
-            row += "*";
+
+        // right
+        for (let j = 1; j <= stars; j++) {
+            row += '* '
         }
         console.log(row);
     }
 }
+star20();
 
-star19();
+console.log('');
+console.log('star ');
+function star21() {
 
-// // console.log('');
-// // console.log('star ');
-// function star19() { }
-// star19();
-// // console.log('');
-// // console.log('star ');
-// function star20() { }
-// star20();
-// // console.log('');
-// // console.log('star ');
-// function star21() { }
+}
 // star21();
 // // console.log('');
 // // console.log('star ');
