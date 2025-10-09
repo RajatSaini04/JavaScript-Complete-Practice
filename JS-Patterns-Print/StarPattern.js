@@ -42,6 +42,7 @@ let n = 5
 // ****
 // ****
 // ****
+console.log('');
 console.log('Star 1');
 function star1() {
     for (let i = 0; i < 4; i++) {
@@ -59,6 +60,7 @@ star1();
 // **
 // ***
 // ****
+console.log('');
 console.log('Star 2');
 function star2() {
     for (let i = 0; i < 4; i++) {
@@ -76,6 +78,7 @@ star2()
 // 12
 // 123
 // 1234
+console.log('');
 console.log('Star 3');
 function star3() {
     for (let i = 0; i < 4; i++) {
@@ -94,6 +97,7 @@ star3()
 // 22
 // 333
 // 4444
+console.log('');
 console.log('Star 4');
 function star4() {
     for (let i = 0; i < 4; i++) {
@@ -111,6 +115,7 @@ star4()
 // ***
 // **
 // *
+console.log('');
 console.log('Star 5');
 // logic made by me
 // function star5() {
@@ -143,6 +148,7 @@ star5()
 // 123
 // 12
 // 1
+console.log('');
 console.log('star 6');
 function star6() {
     for (let i = 1; i <= n; i++) {
@@ -162,6 +168,7 @@ star6()
 //    *****   
 //   *******  
 //  ********* 
+console.log('');
 console.log('star 7');
 function star7() {
     for (let i = 1; i <= n; i++) {
@@ -562,14 +569,63 @@ function star20() {
 }
 star20();
 
+// star 21
+// ******
+// *    *
+// *    *
+// *    *
+// *    *
+// ******
 console.log('');
-console.log('star ');
+console.log('star 21');
 function star21() {
 
+    for (let i = 1; i <= n; i++) {
+        let row = ""
+
+        for (let j = 1; j <= n; j++) {
+            if (i == 1 || j == 1 || i == n || j == n) {
+                row += "* "
+            }
+            else row += "  "
+        }
+        console.log(row);
+    }
 }
-// star21();
-// // console.log('');
-// // console.log('star ');
-// function star22() { }
-// star22();
+star21();
+
+
+// star 22 
+//  5 5 5 5 5 5 5 5 5  
+//  5 4 4 4 4 4 4 4 5  
+//  5 4 3 3 3 3 3 4 5  
+//  5 4 3 2 2 2 3 4 5  
+//  5 4 3 2 1 2 3 4 5  
+//  5 4 3 2 2 2 3 4 5  
+//  5 4 3 3 3 3 3 4 5  
+//  5 4 4 4 4 4 4 4 5  
+//  5 5 5 5 5 5 5 5 5
+
+
+console.log('');
+console.log('star 22');
+
+function star22(n) {
+    for (let i = 0; i < 2 * n - 1; i++) {
+        let row = "";
+        for (let j = 0; j < 2 * n - 1; j++) {
+            let top = i;
+            let left = j;
+            let right = (2 * n - 2) - j;
+            let down = (2 * n - 2) - i;
+
+            row += (n - Math.min(Math.min(top, down), Math.min(left, right))) + " ";
+        }
+        console.log(row);
+    }
+}
+
+// Example
+star22(5);
+
 
