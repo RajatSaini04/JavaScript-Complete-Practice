@@ -47,3 +47,33 @@ Bank.CheckBalance()
 //     Draw: Withdraw,
 //     SetBal: SetBalance
 // }
+
+// 3. Factory Function Pattern -- ek fn jo similiar Object. create karte ha but diffrent products ke liye
+
+function createProduct(name, price) {
+    let stocks = 10;
+    return {
+        name,
+        price,
+        checkstock(){
+            console.log(stocks);
+        },
+        buy(qty){
+            if (qty<=stocks) {
+                stocks-=qty;
+                console.log(`${qty} booked - ${stocks} left`);
+            }
+            else{
+                console.log(`${stocks} available only`);
+            }
+        },
+        refill(qty){
+            stocks+=qty;
+            console.log(`${stocks} refilled`);
+        }
+    }
+}
+
+let samsung = createProduct("s25", 80000)
+let apple = createProduct("iphone 17", 70000)
+
