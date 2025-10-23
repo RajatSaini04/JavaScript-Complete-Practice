@@ -77,3 +77,4 @@ function createProduct(name, price) {
 let samsung = createProduct("s25", 80000)
 let apple = createProduct("iphone 17", 70000)
 
+// 4. Observer Pattern
